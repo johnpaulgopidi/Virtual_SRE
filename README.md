@@ -1,2 +1,2 @@
 # Virtual_SRE
-AI agent to prevent downtime and other incidents in IT operations
+The source outlines a proposed AI agent designed to enhance change management processes, particularly within a ServiceNow environment. The agent's primary objectives are to **assess risk levels** for change requests, **identify potential conflicts**, and **propose mitigation strategies** to prevent incidents. It aims to achieve this by **analysing historical data**, including past change requests and associated incidents, and employing **semantic analysis** to understand the content of change descriptions. The document details the proposed workflow, data requirements, potential technologies, and testing scenarios for this AI-powered risk forecasting and incident prevention system.
