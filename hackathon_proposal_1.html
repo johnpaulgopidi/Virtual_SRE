@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Risk Forecasting & Outage Prediction using Agentic AI - PROPOSAL</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background-color: #f8f9fa;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: #145F5A;
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+        }
+        
+        .title {
+            font-size: 2.4em;
+            font-weight: 600;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+        
+        .author {
+            font-size: 1.1em;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: white;
+        }
+        
+        .date {
+            font-size: 1em;
+            opacity: 0.8;
+            color: white;
+        }
+        
+        .content {
+            padding: 50px;
+        }
+        
+        .theme-section {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 35px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            border-left: 4px solid #145F5A;
+        }
+        
+        .topic-section {
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            padding: 35px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            border-left: 4px solid #0f172a;
+        }
+        
+        .challenge-section {
+            background: #fef7f0;
+            border: 1px solid #fed7aa;
+            padding: 35px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            border-left: 4px solid #ea580c;
+        }
+        
+        .solution-section {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            padding: 35px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            border-left: 4px solid #16a34a;
+        }
+        
+        .section-title {
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #145F5A;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-title::before {
+            content: "";
+            width: 4px;
+            height: 30px;
+            background: #145F5A;
+            margin-right: 15px;
+            border-radius: 2px;
+        }
+        
+        h2 {
+            font-size: 1.5em;
+            color: #145F5A;
+            margin: 30px 0 20px 0;
+            font-weight: 600;
+        }
+        
+        h3 {
+            font-size: 1.3em;
+            color: #374151;
+            margin: 25px 0 15px 0;
+            font-weight: 600;
+        }
+        
+        p {
+            margin-bottom: 18px;
+            text-align: justify;
+            color: #4b5563;
+            line-height: 1.7;
+        }
+        
+        .solution-steps {
+            display: grid;
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .step-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            transition: box-shadow 0.3s ease;
+        }
+        
+        .step-card:hover {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        
+        .step-number {
+            background: #145F5A;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        
+        .step-title {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #145F5A;
+            margin-bottom: 15px;
+        }
+        
+        .step-content ul {
+            margin-left: 0;
+            list-style: none;
+        }
+        
+        .step-content li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+            color: #4b5563;
+        }
+        
+        .step-content li::before {
+            content: "•";
+            color: #145F5A;
+            font-weight: bold;
+            position: absolute;
+            left: 8px;
+            font-size: 1.2em;
+        }
+        
+        .step-content strong {
+            color: #374151;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .feature-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #145F5A;
+        }
+        
+        .feature-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #145F5A;
+            margin-bottom: 15px;
+        }
+        
+        .feature-card p {
+            color: #6b7280;
+            text-align: center;
+        }
+        
+        .tech-stack {
+            background: #0f172a;
+            color: white;
+            padding: 40px;
+            border-radius: 8px;
+            margin: 40px 0;
+        }
+        
+        .tech-stack h2 {
+            color: white;
+            margin-bottom: 25px;
+            font-size: 1.6em;
+        }
+        
+        .tech-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .tech-item {
+            background: rgba(20, 95, 90, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #145F5A;
+        }
+        
+        .tech-item strong {
+            display: block;
+            margin-bottom: 8px;
+            color: #93c5fd;
+            font-size: 1.1em;
+        }
+        
+        .tech-item {
+            color: #cbd5e1;
+        }
+        
+        .future-section {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            color: #374151;
+            padding: 40px;
+            border-radius: 8px;
+            margin: 40px 0;
+        }
+        
+        .future-section h2 {
+            color: #145F5A;
+            margin-bottom: 25px;
+            font-size: 1.6em;
+        }
+        
+        .future-list {
+            list-style: none;
+        }
+        
+        .future-list li {
+            margin-bottom: 18px;
+            padding-left: 30px;
+            position: relative;
+            color: #4b5563;
+        }
+        
+        .future-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #145F5A;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .future-list strong {
+            color: #374151;
+        }
+        
+        .footer {
+            background: #145F5A;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.1em;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 8px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .title {
+                font-size: 1.8em;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tech-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .theme-section,
+            .topic-section,
+            .challenge-section,
+            .solution-section,
+            .tech-stack,
+            .future-section {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">Change Risk Forecasting & Outage Prediction using Agentic AI - Proposal</h1>
+            <p class="author">Edward Sekharan</p>
+            <p class="date">May 22, 2025</p>
+        </header>
+
+        <div class="content">
+            <section class="theme-section">
+                <h2 class="section-title">Theme</h2>
+                <h3>Innovation in SRE & Observability using Agentic AI</h3>
+                <p>In today's fast-moving engineering environments, maintaining reliability while innovating rapidly is a constant challenge. Our hackathon entry embraces the theme of "Innovation in SRE & Observability using Agentic AI" by leveraging autonomous AI agents to bring a new level of proactivity and transparency to change management.</p>
+            </section>
+
+            <section class="topic-section">
+                <h2 class="section-title">Hackathon Topic</h2>
+                <h3>Change Risk Forecasting & Outage Prediction using Agentic AI</h3>
+                <p>We propose an AI-driven workflow that analyzes every incoming change request—be it code, infrastructure, or configuration—and predicts its risk of causing service degradation or outages. Beyond a simple score, our system offers clear reasoning, actionable recommendations, and an explainability dashboard to guide teams through safe deployments.</p>
+            </section>
+
+            <section class="challenge-section">
+                <h2 class="section-title">Industry Challenge</h2>
+                <p>High-velocity engineering teams deploy changes constantly, yet each deployment carries the possibility of introducing performance regressions, misconfigurations, or full-blown outages. Traditional rule-based risk assessments are brittle: they miss contextual nuances, fail to learn from historical incidents, and lack the explainability teams need to trust automated recommendations.</p>
+                <p>The result is either overly conservative processes that slow innovation or blind spots that lead to costly downtime.</p>
+            </section>
+
+            <section class="solution-section">
+                <h2 class="section-title">Proposed Solution Approach</h2>
+                <p><strong>How can we build an autonomous AI agent that analyzes a change request and forecasts its risk level intelligently—complete with reasoning, recommendations, and explainability—before the change is deployed?</strong></p>
+                
+                <div class="solution-steps">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3 class="step-title">Intelligent Change Ingestion</h3>
+                        <div class="step-content">
+                            <ul>
+                                <li><strong>Natural-Language Parsing:</strong> Agent ingests the change description, justification, and planned timing.</li>
+                                <li><strong>Contextual Enrichment:</strong> Ties the request to relevant configuration items (CIs) and past incidents via a knowledge graph.</li>
+                                <li><strong>Initial Risk Estimate:</strong> Generates a "low/medium/high" risk label based on criteria such as business-criticality and deployment window.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3 class="step-title">Historical Contextual Analysis</h3>
+                        <div class="step-content">
+                            <ul>
+                                <li><strong>Similarity Search:</strong> Finds past changes with matching keywords or affected systems.</li>
+                                <li><strong>Incident Correlation:</strong> Adjusts risk upward if similar changes had incidents, or downward if historical rollouts were smooth.</li>
+                                <li><strong>Data-Driven Reasoning:</strong> Provides human-readable explanations like, "No prior incidents for this CI in the last 90 days — risk lowered."</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3 class="step-title">Automated Testing Mitigation Validation</h3>
+                        <div class="step-content">
+                            <ul>
+                                <li><strong>CI/CD Integration:</strong> Checks for existence and results of pre-production tests.</li>
+                                <li><strong>Mitigation Checks:</strong> Verifies backout plans or feature flags are in place when tests can't run.</li>
+                                <li><strong>Dynamic Risk Adjustment:</strong> Updates risk score and suggests next steps, e.g., "Proceed with caution; ensure rollback script is validated."</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <h3 class="step-title">Scheduling Conflict Detection</h3>
+                        <div class="step-content">
+                            <ul>
+                                <li><strong>Calendar Scanning:</strong> Detects overlapping changes on shared resources.</li>
+                                <li><strong>Team Coordination:</strong> Alerts relevant teams via chatops or email when conflicts arise.</li>
+                                <li><strong>Recommendation:</strong> Proposes rescheduling windows to minimize collision.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">5</div>
+                        <h3 class="step-title">Final Recommendation & Explainability</h3>
+                        <div class="step-content">
+                            <ul>
+                                <li><strong>Risk Level:</strong> Delivers a final green/yellow/red verdict.</li>
+                                <li><strong>Actionable Guidance:</strong> Provides a concise summary, e.g., "Yellow — deploy after verifying load-test results; rollback ready."</li>
+                                <li><strong>Explainability Dashboard:</strong> Visualizes contributing factors, historical data points, and step-by-step reasoning for stakeholder review.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Key Features & Benefits</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">⚙️</div>
+                        <h3 class="feature-title">Agentic Autonomy</h3>
+                        <p>Minimal manual tuning—our AI agent learns and improves as more change outcomes are ingested.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3 class="feature-title">Full Transparency</h3>
+                        <p>Every recommendation is backed by a clear explanation, boosting trust and adoption.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3 class="feature-title">Reduced Outages</h3>
+                        <p>By catching high-risk changes early, we expect a significant drop in post-deployment incidents.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📈</div>
+                        <h3 class="feature-title">Scalable Extensible</h3>
+                        <p>Modular design allows plugging in new data sources (e.g., performance metrics, error budgets).</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tech-stack">
+                <h2>Technical Stack</h2>
+                <div class="tech-list">
+                    <div class="tech-item">
+                        <strong>AI Agent Framework</strong>
+                        ServiceNow AI Agent Studio (or similar orchestration tooling)
+                    </div>
+                    <div class="tech-item">
+                        <strong>Natural Language & ML</strong>
+                        Transformer models for text understanding, historical risk models for statistical insights
+                    </div>
+                    <div class="tech-item">
+                        <strong>Data Fabric & Knowledge Graph</strong>
+                        Real-time access to change records, incidents, and CIs
+                    </div>
+                    <div class="tech-item">
+                        <strong>Integrations</strong>
+                        CI/CD pipelines, testing platforms, chatops (Slack/MS Teams), and monitoring systems
+                    </div>
+                    <div class="tech-item">
+                        <strong>Frontend</strong>
+                        Lightweight web dashboard for explainability and audit trails
+                    </div>
+                </div>
+            </section>
+
+            <section class="future-section">
+                <h2>Future Directions</h2>
+                <ul class="future-list">
+                    <li><strong>Real-Time Observability Feeds:</strong> Ingest live metrics to refine risk scores during the deployment window.</li>
+                    <li><strong>Cross-Project Learning:</strong> Share anonymized learnings across teams to improve global model accuracy.</li>
+                    <li><strong>Self-Healing Automations:</strong> Extend agents to automatically roll back risky changes when certain thresholds are breached.</li>
+                </ul>
+            </section>
+        </div>
+
+        <footer class="footer">
+            Prepared for the "Innovation in SRE & Observability using Agentic AI" Hackathon
+        </footer>
+    </div>
+</body>
+</html>
